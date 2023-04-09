@@ -817,7 +817,7 @@ function Clone-Lepton() {
     $branch = "${leptonBranch}"
   }
 
-  git clone -b "${branch}" https://github.com/black7375/Firefox-UI-Fix.git chrome
+  git clone -b "${branch}" https://github.com/saschatrebbin/Firefox-UI-Fix.git chrome
   if ( -Not (Test-Path -Path "chrome" -PathType "Container") ) {
     Lepton-ErrorMessage "Unable to find downloaded files"
   }
