@@ -779,7 +779,7 @@ clone_lepton() {
     branch="${leptonBranch}"
   fi
 
-  git clone -b "${branch}" https://github.com/black7375/Firefox-UI-Fix.git chrome
+  git clone -b "${branch}" https://github.com/saschatrebbin/Firefox-UI-Fix.git chrome
   if ! [ -d "chrome" ]; then
     lepton_error_message "Unable to find downloaded files"
   fi
