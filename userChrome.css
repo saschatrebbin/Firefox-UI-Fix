@@ -21,6 +21,7 @@
  * }
 */
 
+/* Sidebery Customization */
 /* remove the tab bar - which only works, if the objects inside also are not visible */
 #TabsToolbar,
 #TabsToolbar .tabbrowser-tab,
