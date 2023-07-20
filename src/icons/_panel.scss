@@ -1,6 +1,6 @@
 /*= Panel - Main =============================================================*/
 #appMenu-proton-addon-banners > .addon-banner-item > .toolbarbutton-icon {
-  display: -moz-inline-box !important;
+  @include InlineBox(true);
   margin-inline-start: var(--arrowpanel-menuicon-padding);
   @include BoxOrder(0, true);
 }
@@ -95,6 +95,9 @@
   #appMenu-find-button2 {
     list-style-image: url("chrome://global/skin/icons/search-glass.svg");
   }
+  #appMenu-translate-button {
+    list-style-image: url(chrome://browser/skin/translations.svg);
+  }
   #appMenu-zoom-controls2::before, /* Legacy v104 */
   #appMenu-zoom-controls::before {
     content: url("../icons/screenshot.svg");
@@ -133,7 +136,7 @@
 /* Default */
 #fxa-manage-account-button::before {
   content: "";
-  display: -moz-inline-box;
+  @include InlineBox;
   width: 32px !important;
   height: 32px !important;
   border-radius: 50%;
@@ -153,7 +156,7 @@
 
 .syncNowBtn {
   visibility: visible !important;
-  @include BoxOrder(1, true);
+  @include BoxOrder(0, true);
 
   margin-inline-end: var(--arrowpanel-menuicon-padding);
 }
@@ -162,7 +165,7 @@
 }
 
 #PanelUI-fxa-menu-connect-device-button {
-  list-style-image: url("chrome://browser/skin/fxa/add-device.svg");
+  list-style-image: url("../icons/add-device.svg");
 }
 #PanelUI-fxa-menu-sendtab-button {
   list-style-image: url("../icons/send-to-device.svg");
@@ -199,7 +202,7 @@
 /* Change Separator */
 #PanelUI-fxa-menu::before {
   content: "";
-  display: -moz-box;
+  @include Box;
   border-bottom: 1px solid var(--panel-separator-color);
   margin: var(--panel-separator-margin);
   padding: 0;
@@ -244,6 +247,9 @@ panelMenuBookmarkThisPage[starred] {
 }
 #appMenuRecentlyClosedWindows {
   list-style-image: url("chrome://browser/skin/window.svg");
+}
+#appMenuSearchHistory {
+  list-style-image: url("chrome://global/skin/icons/search-glass.svg");
 }
 #appMenuRestoreSession, /* Legacy - v103 */
 #appMenu-restoreSession {
@@ -342,6 +348,9 @@ panelMenuBookmarkThisPage[starred] {
 #appMenu_menu_HelpPopup_reportPhishingtoolmenu {
   list-style-image: url("chrome://global/skin/icons/warning.svg");
 }
+#appMenu_helpSwitchDevice {
+  list-style-image: url("../icons/add-device.svg");
+}
 #appMenu_aboutName {
   list-style-image: url("chrome://global/skin/icons/info.svg");
 }
@@ -362,7 +371,7 @@ panelMenuBookmarkThisPage[starred] {
   list-style-image: url("chrome://browser/skin/downloads/downloads.svg");
 }
 #downloadsHistory .box-inherit.button-box {
-  display: -moz-inline-box !important;
+  @include InlineBox(true);
 }
 
 /*= Toolbar - Overflow Menu ==================================================*/
@@ -396,6 +405,9 @@ panelMenuBookmarkThisPage[starred] {
     --menuitem-image: url("chrome://global/skin/icons/close.svg");
   }
 }
+#BMB_searchBookmarks {
+  --menuitem-image: url("chrome://global/skin/icons/search-glass.svg");
+}
 #BMB_bookmarksShowAllTop,
 #BMB_bookmarksShowAll {
   --menuitem-image: url("chrome://browser/skin/bookmark-star-on-tray.svg");
@@ -409,7 +421,7 @@ panelMenuBookmarkThisPage[starred] {
     list-style-image: url("chrome://browser/skin/bookmark-star-on-tray.svg") !important;
   }
   #BMB_bookmarksShowAllTop > .menu-iconic-left {
-    display: -moz-box !important;
+    @include Box(true);
   }
 }
 
